@@ -49,5 +49,6 @@
     sed 's/;/,/g' data4 > data5
     sed '5 s/,,/,\\N,\\N/g' data5 > data6
     sed '6 s/,,/,\\N,/g' data6 > data7
-    sed 'y/ac/AC/' data7 > data8 
-    sed '7 s/N,/N,\\N/g' data8 > output.csv
+    sed 'y/acn/ACN/' data7 > data8
+    sed 's/,N/,\\N/g' data8 > data9
+    sed '7 s/N,/N,\\N/g' data9 > output.csv
