@@ -41,3 +41,12 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
+
+    sed '12 s/\([1]\)\//0\1\/0/' data.csv > data1
+    sed '12 s/20//' data1 > data2
+    sed 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/g' data2 > data3
+    sed 's/,/./g' data3 > data4
+    sed 's/;/,/g' data4 > data5
+    sed '5 s/,,/,\\N,\\N/g' data5 > data6
+    sed '6 s/,,/,\\N,/g' data6 > data7
+    sed '7 s/N,/N,\\N/g' data7 > output.csv
